@@ -41,9 +41,13 @@ function showPage(list, page) {
    const startIndex = (page * pageItems) - pageItems;
    const endIndex = page * pageItems;
    for (i = 0; i < list.length; i++) {
-      
+      if(i >= startIndex && i < endIndex){
+         list[i].style.display = "block";
+      }
    }
 }
+
+showPage(listItems, 1);
 
 
 /*** 
