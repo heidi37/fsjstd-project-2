@@ -55,8 +55,24 @@ showPage(listItems, 1);
    functionality to the pagination buttons.
 ***/
 
+function appendPageLinks(list) {
 
+const nodeDiv = document.createElement("DIV");
+const nodeUl = document.createElement("UL");
+nodeDiv.appendChild(nodeUl);
+nodeDiv.className = "pagination";
 
+   for(i = 1; i <= listItems.length / 10 ; i++){
+      const nodeLi = document.createElement("LI");
+      nodeUl.appendChild(nodeLi)
+      nodeLi.innerHTML = '<a href="#">' + i + '</a>';
+   }
 
+nodeUl.firstChild.firstChild.className = "active";
+
+document.querySelector('.page').appendChild(nodeDiv);
+}
+
+appendPageLinks(listItems);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
